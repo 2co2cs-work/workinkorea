@@ -13,10 +13,3 @@ Route::view('profile', 'profile')
     ->name('profile');
 
 require __DIR__.'/auth.php';
-
-// 
-Route::domain('localhost')->group(function () {
-    Route::get('/test', function () {
-        return '111';
-    });
-});
