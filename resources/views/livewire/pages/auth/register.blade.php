@@ -38,10 +38,24 @@ new #[Layout('layouts.guest')] class extends Component
 
 <div>
     <form wire:submit="register">
-        <!-- Name -->
+        <!-- 기업명 -->
         <div>
+            <x-input-label for="company_name" :value="__('기업명')" />
+            <x-text-input wire:model="company_name" id="company_name" class="block mt-1 w-full" type="text" name="company_name" required autofocus />
+            <x-input-error :messages="$errors->get('company_name')" class="mt-2" />
+        </div>
+
+        <!-- 사업자등록번호 -->
+        <div class="mt-4">
+            <x-input-label for="idnumber" :value="__('사업자등록번호')" />
+            <x-text-input wire:model="idnumber" id="idnumber" class="block mt-1 w-full" type="text" name="idnumber" required />
+            <x-input-error :messages="$errors->get('idnumber')" class="mt-2" />
+        </div>
+
+        <!-- Name -->
+        <div class="mt-4">
             <x-input-label for="name" :value="__('Name')" />
-            <x-text-input wire:model="name" id="name" class="block mt-1 w-full" type="text" name="name" required autofocus autocomplete="name" />
+            <x-text-input wire:model="name" id="name" class="block mt-1 w-full" type="text" name="name" required autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
@@ -81,7 +95,7 @@ new #[Layout('layouts.guest')] class extends Component
             </a>
 
             <x-primary-button class="ms-4">
-                {{ __('Register') }}
+                {{ __('회원가입') }}
             </x-primary-button>
         </div>
     </form>
