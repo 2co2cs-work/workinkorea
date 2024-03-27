@@ -23,6 +23,7 @@
                     <!--
                     <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
                     -->
+                    해외인력연계센터 -- 로고
                 </a>
             </div>
 

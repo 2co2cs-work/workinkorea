@@ -38,7 +38,10 @@ new #[Layout('layouts.guest')] class extends Component
 
 <div>
     <div class="mb-4 text-sm text-gray-600">
+        {{--
         {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+        --}}
+        비밀번호를 잊으셨나요? 이메일 주소를 알려주시면 새 비밀번호를 설정할 수 있는 비밀번호 재설정 링크를 이메일로 보내드립니다.
     </div>
 
     <!-- Session Status -->
@@ -47,14 +50,14 @@ new #[Layout('layouts.guest')] class extends Component
     <form wire:submit="sendPasswordResetLink">
         <!-- Email Address -->
         <div>
-            <x-input-label for="email" :value="__('Email')" />
+            <x-input-label for="email" :value="__('이메일')" />
             <x-text-input wire:model="email" id="email" class="block mt-1 w-full" type="email" name="email" required autofocus />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
         <div class="flex items-center justify-end mt-4">
             <x-primary-button>
-                {{ __('Email Password Reset Link') }}
+                {{ __('비밀번호 재설정 링크') }}
             </x-primary-button>
         </div>
     </form>

@@ -28,6 +28,10 @@ new #[Layout('layouts.guest')] class extends Component
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'string', 'confirmed', Rules\Password::defaults()],
+        ],
+        [
+            'email.unique' => '이미 등록된 이메일입니다.',
+            'password.confirmed' => '비밀번호가 일치하지 않습니다.',
         ]);
 
         $validated['password'] = Hash::make($validated['password']);
